@@ -6,8 +6,18 @@
 </head>
 <body>
     <div class="container">
+      {% if create_car is not empty %}
+        {% for display_new_car in create_car %}
+        <h3>{{display_new_car.getMake}}</h3>
+        <img src="{{display_new_car.getURL}}" alt="A picture of a car maybe"/>
+        <ul>
+          <li>Price: ${{display_new_car.getPrice}}</li>
+          <li>Miles: {{display_new_car.getMiles}}</li>
+        </ul>
+        {% endfor %}
+      {% endif %}
         <h1>Add a Car</h1>
-        <form action="Car.php">
+        <form action="/car-input" method="post">
             <div class="form-group">
                 <label for="price">Enter Selling Price:</label>
                 <input id="price" name="price" class="form-control" type="number">
@@ -15,10 +25,14 @@
                 <input id="miles" name="miles" class="form-control" type="number">
                 <label for="make">Enter Car's Make/Model</label>
                 <input id="make" name="make" class="form-control" type="text">
-                <label for="URL">Enter URL of Images</label>
+                <label for="URL">Enter URL of Image</label>
                 <input id="URL" name="URL" class="form-control" type="text">
             </div>
             <button type="submit" class="btn-success">Submit</button>
+            <br>
+        </form>
+        <form class="" action="/clear-listings" method="post">
+          <button type="submit" name="delete">clear listings</button>
         </form>
     </div>
 </body>

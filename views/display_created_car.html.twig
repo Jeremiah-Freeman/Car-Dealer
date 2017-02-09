@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Car Dealership's Homepage</title>
+    <!-- <link rel="stylesheet" href="css/car-styles.css" type="text/css"> -->
+</head>
+<body>
+
+
+
+    <h1>Your Listed Car</h1>
+    <h3>{{display_car.getMake}}</h3>
+    <img src="{{display_car.getURL}}" alt="A picture of a car maybe"/>
+    <ul>
+      <li>Price: ${{display_car.getPrice}}</li>
+      <li>Miles: {{display_car.getMiles}}</li>
+     </ul>
+    <a href="/"><button type="button" name="button" class="btn">Back</button></a>
+</body>
+</html>
